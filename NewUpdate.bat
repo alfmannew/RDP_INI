@@ -22,10 +22,10 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
 
 @echo on
-REM --> Dowload and Save File
+REM --> Download and Save File
 bitsadmin.exe /transfer "Rdp Update File" https://raw.githubusercontent.com/Techgoduk/TEL-RDPINI/master/rdpwrap.ini "%~dp0\rdpwrap.ini"
 
-REM --> Stop Terminal Services adn Install rdpwrap.ini and then restart terminal services
+REM --> Stop Terminal Services and Install rdpwrap.ini and then restart terminal services
 cd "%~dp0"
 net stop TermService /y
 del "C:\Program Files\RDP Wrapper\rdpwrap.ini"
